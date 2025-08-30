@@ -12,3 +12,5 @@ jobs:
     steps:
       - id: Say-Hello
         run: echo "Hello, world!"
+      - id: Second-Step
+        run: ls
