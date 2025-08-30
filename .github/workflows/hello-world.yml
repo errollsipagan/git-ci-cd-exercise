@@ -12,10 +12,12 @@ jobs:
     steps:
       - id: Say-Hello
         run: echo "Hello, world!"
+      - id: Redirect
+        run: 'echo "CURRENT_TIME=$(date)" >> $GITHUB_OUTPUT'
     #   - id: Second-Step
     #     run: ls
       - id: Cow-Says
         uses: mscoutermarsh/cowsays-action@master
         with:
-            text: 'ship ship ship!'
+            text: 'Moo: ${{steps.Redirect.outputs.CURRENT_TIME}}'
             color: 'red'
